@@ -1,0 +1,73 @@
+<div class="container">
+  <section class="dashboard-content">
+      <mat-toolbar color="primary">
+        <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+          <mat-icon>menu</mat-icon>
+        </button>
+        <span>My App</span>
+        <span class="example-spacer"></span>
+        <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
+          <mat-icon>favorite</mat-icon>
+        </button>
+        <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
+          <mat-icon>share</mat-icon>
+        </button>
+      </mat-toolbar>
+    <form [formGroup]="userForm" class="w-100" name="userForm">
+      <div class="box-style-breadcrumb mt-4 p-5">
+        <div class="form-main">
+          <div class="form-row-wrapper">
+            <div class="row">
+              <div class="col-3">
+                <div class="form-field">
+                  <mat-form-field appearance="outline" class="element-full-width" color="primary">
+                    <mat-label>First Name:</mat-label>
+                    <input  formControlName="firstName" matInput name="firstName" required type="text"/>
+                  </mat-form-field>
+                </div>
+              </div>
+              <div class="col-3">
+                <div class="form-field">
+                  <mat-form-field appearance="outline" class="element-full-width" color="primary">
+                    <mat-label>Last Name:</mat-label>
+                    <input  formControlName="lastName" matInput name="lastName" required type="text"/>
+                  </mat-form-field>
+                </div>
+              </div>
+              <div class="col-3">
+                <div class="form-field">
+                  <mat-form-field appearance="outline" class="element-full-width" color="primary">
+                    <mat-label>Birth Date:</mat-label>
+                    <input  formControlName="dateOfBirth" matInput name="dateOfBirth" required type="date"/>
+                  </mat-form-field>
+                </div>
+              </div>
+              <div class="col-3">
+                <div class="form-field">
+                  <mat-form-field appearance="outline" class="element-full-width" color="primary">
+                    <mat-label>Joining Date:</mat-label>
+                    <input  formControlName="dateOfJoining" matInput name="dateOfJoining" required type="date"/>
+                  </mat-form-field>
+                </div>
+              </div>
+              <div class="col-3">
+                <div class="form-field">
+                  <mat-form-field appearance="fill">
+                    <mat-label>Designation</mat-label>
+                    <mat-select formControlName="designation">
+                      <mat-option *ngFor="let desig of options" [value]="desig">
+                        {{desig}}
+                      </mat-option>
+                    </mat-select>
+                  </mat-form-field>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </form>
+  </section>
+</div>
+
